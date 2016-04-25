@@ -1,5 +1,7 @@
 <resources>
     <string name="app_name">CleverHome</string>
 
-    <string name="titularbluetooth">Bluetooth</string>
+    <string name="titularbluetooth">Bluetooth Home</string>
+    <string name="lbldevices">Dispositivos</string>
+    <string name="showdevices">Mostrar Dispositivos</string>
 </resources>
