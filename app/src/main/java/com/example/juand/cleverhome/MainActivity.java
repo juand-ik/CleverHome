@@ -3,7 +3,6 @@ package com.example.juand.cleverhome;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Adapter;
 import android.widget.TabHost;
 import android.widget.Button;
 import android.widget.ListView;
@@ -11,14 +10,12 @@ import android.widget.ListView;
 import android.widget.Toast;
 import android.widget.ArrayAdapter;
 import android.widget.AdapterView;
-import android.widget.AdapterView.OnItemClickListener;
 import android.widget.TextView;
 import android.content.Intent;
 import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothDevice;
 
-import java.io.OutputStream;
-import java.lang.reflect.Array;
+
 import java.util.Set;
 import java.util.ArrayList;
 
@@ -57,7 +54,7 @@ public class MainActivity extends AppCompatActivity
             Toast.makeText(getApplicationContext(), "Adaptador Bluetooth No Disponible",Toast.LENGTH_LONG).show();
             finish();
         }
-        else if(cellBluetooth.isEnabled())
+        else if(!cellBluetooth.isEnabled())
         {
             //Pregunta si deseas activar bluetooth
             Intent turnBtnOn = new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE);

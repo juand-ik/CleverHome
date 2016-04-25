@@ -1,7 +1,6 @@
 package com.example.juand.cleverhome;
 
 import android.support.v7.app.ActionBarActivity;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 
@@ -52,7 +51,7 @@ public class ledControl extends ActionBarActivity {
         btnOff = (Button)findViewById(R.id.btnOff);
         btnDis = (Button)findViewById(R.id.btnDis);
         brightness = (SeekBar)findViewById(R.id.seekBar);
-        //lumn = (TextView)findViewById(R.id.lumn);
+        lumn = (TextView)findViewById(R.id.textView);
 
         new ConnectBT().execute(); //Call the class to connect
 
