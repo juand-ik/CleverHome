@@ -1,6 +1,6 @@
 package com.example.juand.cleverhome;
 
-import android.support.v7.app.ActionBarActivity;
+import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 
@@ -22,7 +22,8 @@ import java.io.IOException;
 import java.util.UUID;
 
 
-public class ledControl extends ActionBarActivity {
+public class ledControl extends AppCompatActivity
+{
 
     Button btnOn, btnOff, btnDis;
     SeekBar brightness;
