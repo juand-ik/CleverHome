@@ -60,12 +60,15 @@
                         />
                     <ListView
                         android:layout_width="match_parent"
-                        android:layout_height="180dp">
+                        android:layout_height="180dp"
+                        android:id="@+id/deviceList"
+                        >
                     </ListView>
                     <Button
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:text="@string/showdevices"
+                        android:id="@+id/showButton"
                         />
 
 

@@ -4,4 +4,8 @@
     <string name="titularbluetooth">Bluetooth Home</string>
     <string name="lbldevices">Dispositivos</string>
     <string name="showdevices">Mostrar Dispositivos</string>
+    <string name="onLed">Encender</string>
+    <string name="offLed">Apagar</string>
+    <string name="disconect">Desconectar</string>
+    <string name="brightness">Brillo</string>
 </resources>
