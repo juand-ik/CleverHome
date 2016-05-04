@@ -25,16 +25,19 @@ import java.util.UUID;
 public class ledControl extends AppCompatActivity
 {
 
-    Button btnOn, btnOff, btnDis;
+    Button btnOn, btnOff, btnDis,btnTemp;
     SeekBar brightness;
     TextView lumn;
+    TextView textViewTemp;
     String address = null;
     private ProgressDialog progress;
     BluetoothAdapter myBluetooth = null;
     BluetoothSocket btSocket = null;
     private boolean isBtConnected = false;
+
     //SPP UUID. Look for it
-    static final UUID myUUID = UUID.fromString("00001101-0000-1000-8000-00805F9B34FB");
+    static final UUID myUUID = UUID.fromString("00001101-0000-1000-8000-00805f9b34fb");
+    //static final UUID myUUID = UUID.fromString("00000000-0000-1000-8000-00805F9B34FB");
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -53,6 +56,9 @@ public class ledControl extends AppCompatActivity
         btnDis = (Button)findViewById(R.id.btnDis);
         brightness = (SeekBar)findViewById(R.id.seekBar);
         lumn = (TextView)findViewById(R.id.textView);
+
+        btnTemp = (Button)findViewById(R.id.btntemp);
+        textViewTemp = (TextView)findViewById(R.id.textView2);
 
         new ConnectBT().execute(); //Call the class to connect
 
@@ -80,6 +86,15 @@ public class ledControl extends AppCompatActivity
             public void onClick(View v)
             {
                 Disconnect(); //close connection
+            }
+        });
+
+        btnTemp.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public  void onClick(View v)
+            {
+                showTemp();
             }
         });
 
@@ -156,7 +171,25 @@ public class ledControl extends AppCompatActivity
             }
         }
     }
+    //Temperature
+    private void showTemp()
+    {
+        if (btSocket!=null)
+        {
+            try
+            {
+                btSocket.getOutputStream().write("ST".toString().getBytes());
+                textViewTemp.setText(String.valueOf("ST".toString().getBytes()));
 
+                //textViewTemp.setText(String.valueOf(progress));
+                //textViewTemp.setText("xD");
+            }
+            catch (IOException e)
+            {
+                msg("Error");
+            }
+        }
+    }
     // fast way to call Toast
     private void msg(String s)
     {

@@ -69,7 +69,8 @@
                         android:layout_height="match_parent"
                         android:text="@string/showdevices"
                         android:id="@+id/showButton"
-                        />
+                        android:background="#2ecc71"
+                        android:textColor="#ffffff" />
 
 
 
