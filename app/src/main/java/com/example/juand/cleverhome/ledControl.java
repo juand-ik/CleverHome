@@ -25,8 +25,8 @@ import java.util.UUID;
 public class ledControl extends AppCompatActivity
 {
 
-    Button btnOn, btnOff, btnDis,btnTemp;
-    SeekBar brightness;
+    Button btnOn, btnOff, btnDis,btnTemp,btnDesAl;
+    //SeekBar brightness;
     TextView lumn;
     TextView textViewTemp;
     String address = null;
@@ -54,7 +54,9 @@ public class ledControl extends AppCompatActivity
         btnOn = (Button)findViewById(R.id.btnOn);
         btnOff = (Button)findViewById(R.id.btnOff);
         btnDis = (Button)findViewById(R.id.btnDis);
-        brightness = (SeekBar)findViewById(R.id.seekBar);
+        btnDesAl = (Button) findViewById(R.id.btnDesAl);
+
+        //brightness = (SeekBar)findViewById(R.id.seekBar);
         lumn = (TextView)findViewById(R.id.textView);
 
         btnTemp = (Button)findViewById(R.id.btntemp);
@@ -71,7 +73,14 @@ public class ledControl extends AppCompatActivity
                 turnOnLed();      //method to turn on
             }
         });
-
+        btnDesAl.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                turnOfAlarm();
+            }
+        });
         btnOff.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v)
@@ -98,7 +107,7 @@ public class ledControl extends AppCompatActivity
             }
         });
 
-        brightness.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+        /*brightness.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
                 if (fromUser==true)
@@ -124,7 +133,7 @@ public class ledControl extends AppCompatActivity
             public void onStopTrackingTouch(SeekBar seekBar) {
 
             }
-        });
+        });*/
     }
 
     private void Disconnect()
@@ -141,7 +150,20 @@ public class ledControl extends AppCompatActivity
         finish(); //return to the first layout
 
     }
-
+    private void turnOfAlarm()
+    {
+        if (btSocket!=null)
+        {
+            try
+            {
+                btSocket.getOutputStream().write("AL".toString().getBytes());
+            }
+            catch (IOException e)
+            {
+                msg("Error");
+            }
+        }
+    }
     private void turnOffLed()
     {
         if (btSocket!=null)

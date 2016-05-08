@@ -8,5 +8,7 @@
     <string name="offLed">Apagar</string>
     <string name="disconect">Desconectar</string>
     <string name="brightness">Brillo</string>
+    <string name="alarm">Alarma</string>
     <string name="temp">0</string>
+    <string name="desAl">Desactivar</string>
 </resources>

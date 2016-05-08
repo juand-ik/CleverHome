@@ -26,7 +26,6 @@
         android:text="@string/offLed"
         android:id="@+id/btnOff"
         android:layout_below="@+id/btnOn"
-        android:layout_alignEnd="@+id/btnOn"
         android:layout_marginTop="10dp"
         android:background="#F44336"
         android:textColor="#ffffff" />
@@ -38,26 +37,27 @@
         android:id="@+id/btnDis"
         android:layout_marginTop="10dp"
         android:layout_below="@+id/btnOff"
-        android:layout_alignParentStart="true"
         android:textColor="#ffffff"
         android:background="#7c4dff" />
 
-    <SeekBar
+    <Button
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/seekBar"
-        android:layout_centerVertical="true"
-        android:layout_alignParentStart="true" />
+        android:text="@string/desAl"
+        android:textColor="#ffffff"
+        android:background="#D32F2F"
+        android:id="@+id/btnDesAl"
+        android:layout_centerVertical="true" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="@string/brightness"
+        android:text="@string/alarm"
         android:id="@+id/textView"
-        android:layout_below="@+id/btnDis"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="25dp" />
+        android:layout_above="@+id/btnDesAl"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -65,8 +65,7 @@
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Temperatura:"
         android:id="@+id/temp"
-        android:layout_below="@+id/seekBar"
-        android:layout_alignParentStart="true"
+        android:layout_below="@+id/btnDesAl"
         android:layout_marginTop="23dp" />
 
     <TextView
@@ -80,8 +79,7 @@
         android:textColor="#ffffff"
         android:id="@+id/textView2"
         android:elevation="10dp"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentBottom="true" />
 
     <Button
         android:layout_width="wrap_content"
@@ -90,7 +88,6 @@
         android:id="@+id/btntemp"
         android:background="#34495e"
         android:textColor="#ffffff"
-        android:layout_above="@+id/textView2"
-        android:layout_alignParentStart="true" />
+        android:layout_above="@+id/textView2" />
 
 </RelativeLayout>
